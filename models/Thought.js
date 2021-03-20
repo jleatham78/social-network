@@ -19,7 +19,7 @@ const ReactionSchema = new Schema({
     },
 
     createdAt: {
-        Type: Date,
+        type: Date,
         default: Date.now,
         get: createdAtVal => dateFormat(createdAtVal)
     }
@@ -63,3 +63,7 @@ reactions: [ReactionSchema],
 ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
+
+const Thought = model('Thought', ThoughtSchema);
+
+module.exports = Thought;

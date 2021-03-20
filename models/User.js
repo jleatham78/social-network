@@ -29,9 +29,12 @@ friends: [
         ref: 'User'
     }
 ],
-    toJSON: {
-        virtuals: true
-    }
+    
+},
+{
+toJSON: {
+    virtuals: true
+}
 });
 
 UserSchema.virtual('friendCount').get(function() {
