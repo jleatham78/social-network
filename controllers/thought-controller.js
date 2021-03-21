@@ -48,7 +48,6 @@ const thoughtController = {
     },
 
         addReaction({ params, body }, res) {
-            console.log(body);
             Thought.findOneAndUpdate(
               { _id: params.thoughtId },
               { $push: { reactions: body } },
